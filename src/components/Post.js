@@ -3,6 +3,9 @@ import Row from 'react-bootstrap/Row';
 // import PropTypes from 'prop-types';
 
 function Post(props){
+
+  let url = "http://source.unsplash.com/200x150/?" + post.image;
+
   return (
     <React.Fragment>
       <Row>
@@ -12,7 +15,9 @@ function Post(props){
           
         </Col>
         <Col md={9}>
-          <p>{props.subject}</p>
+          <h3>{props.subject}</h3>
+          <p>by {post.username}</p>
+          <img src={url} />
         </Col>
       </Row>
     </React.Fragment>

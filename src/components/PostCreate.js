@@ -24,3 +24,5 @@ function NewPostForm(props) {
     </React.Fragment>
   )
 }
+
+export default NewPostForm;

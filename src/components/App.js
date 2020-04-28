@@ -5,9 +5,10 @@ import PostControl from './PostControl';
 
 function App() {
   return (
-   <React.Fragment>
-     <Header />
-     <PostControl />
+    <React.Fragment>
+      <Header />
+      <hr />
+      <PostControl />
     </React.Fragment>
   );
 }
