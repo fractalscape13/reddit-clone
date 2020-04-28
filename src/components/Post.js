@@ -4,7 +4,6 @@ import Col from 'react-bootstrap/Col';
 import PropTypes from 'prop-types';
 
 function Post(props){
-
   let url = "http://source.unsplash.com/200x150/?" + props.image;
 
   return (
@@ -26,11 +25,12 @@ function Post(props){
 }
 
 Post.propTypes = {
-subject: PropTypes.string,
-username: PropTypes.string,
-brownies: PropTypes.number,
-image: PropTypes.string,
-id: PropTypes.string,
-whenPostClicked: PropTypes.func
+  subject: PropTypes.string,
+  username: PropTypes.string,
+  brownies: PropTypes.number,
+  image: PropTypes.string,
+  id: PropTypes.string,
+  whenPostClicked: PropTypes.func
 }
+
 export default Post;

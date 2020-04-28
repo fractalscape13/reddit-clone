@@ -3,7 +3,6 @@ import Post from './Post';
 import PropTypes from "prop-types";
 
 function PostList(props) {
-  const post = props;
   return (
     <React.Fragment> 
       <h3>Post List</h3>

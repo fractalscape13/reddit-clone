@@ -1,8 +1,8 @@
-import postListReducer from './post-list-reducer';
-import { combineReducers } from 'redux';
+// import postListReducer from './post-list-reducer';
+// import { combineReducers } from 'redux';
 
-const rootReducer = combineReducers({
-  masterPostList: postListReducer
-});
+// const rootReducer = combineReducers({
+//   masterPostList: postListReducer
+// });
 
-export default rootReducer;
+// export default rootReducer;

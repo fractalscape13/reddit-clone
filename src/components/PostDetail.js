@@ -17,8 +17,18 @@ function PostDetail(props){
       <div>
         <p>{post.content}</p>
       </div>
+      <div>
+        <button onClick={()=> onClickingDelete(post.id)}>Remove Post</button>
+          <button onClick={ props.onClickingEdit }>Edit Post</button>
+      </div>
     </React.Fragment>
   )
+}
+
+PostDetail.propTypes = {
+  post: PropTypes.object,
+  onClickingDelete: PropTypes.func,
+  onClickingEdit: PropTypes.func
 }
 
 export default PostDetail;

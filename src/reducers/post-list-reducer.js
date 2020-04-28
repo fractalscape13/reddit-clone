@@ -1,4 +1,4 @@
-export default (state = {}, action => {
+export default (state = {}, action) => {
   const {subject, content, username, brownies, timestamp, image, id} = action;
   switch (action.type){
     case 'ADD_POST':
@@ -20,4 +20,4 @@ export default (state = {}, action => {
     default: 
       return state;
   }
-});
+};

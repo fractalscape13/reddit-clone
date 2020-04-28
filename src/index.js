@@ -5,9 +5,10 @@ import App from './components/App';
 import * as serviceWorker from './serviceWorker';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import rootReducer from './reducers/index';
+import reducer from './reducers/post-list-reducer';
+// import rootReducer from './reducers/index';
 
-const store = createStore(rootReducer);
+const store = createStore(reducer);
 
 store.subscribe(() =>
   console.log(store.getState())

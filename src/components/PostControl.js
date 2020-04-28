@@ -2,6 +2,7 @@ import React from 'react';
 import PostCreate from './PostCreate';
 import PostList from './PostList';
 import PostDetail from './PostDetail';
+import PostEdit from './PostEdit';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
@@ -16,7 +17,6 @@ class PostControl extends React.Component {
       };
     }
 
-    //handle methods
     handleClick = () => {
       if (this.state.selectedPost != null) {
         this.this.setState({formVisibleOnPage: false, selectedPost: null, editing: false});
