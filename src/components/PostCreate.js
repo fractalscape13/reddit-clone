@@ -2,6 +2,7 @@ import React from 'react';
 import { v4 } from 'uuid';
 // import PropTypes from 'prop-types';
 import PostForm from './PostForm';
+import PropTypes from 'prop-types';
 
 function NewPostForm(props) {
   
@@ -25,7 +26,7 @@ function NewPostForm(props) {
   )
 }
 
-PostCreate.propTypes = {
+NewPostForm.propTypes = {
   onNewPostCreation: PropTypes.func
 }
 

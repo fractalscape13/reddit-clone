@@ -4,10 +4,22 @@ body, html {
 
 body {
   text-align: center;
+  background-color: rgb(241, 241, 202);
+  background-image: linear-gradient(rgb(241, 241, 202), rgb(175, 163, 142));
+}
+
+button {
+  border: 5px solid black;
+  border-radius: 15px;
+  margin: 5px;
 }
 
 button:hover {
   cursor: pointer;
   opacity: .6;
-  border: 5px solid ivory;
+  border: 5px solid gray;
+}
+
+input, textarea {
+  margin: 3px;
 }

@@ -19,7 +19,7 @@ class PostControl extends React.Component {
 
     handleClick = () => {
       if (this.state.selectedPost != null) {
-        this.this.setState({formVisibleOnPage: false, selectedPost: null, editing: false});
+        this.setState({formVisibleOnPage: false, selectedPost: null, editing: false});
       } else {
         this.setState(prevState => ({
           formVisibleOnPage: !prevState.formVisibleOnPage
