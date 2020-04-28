@@ -25,7 +25,7 @@ function PostList(props) {
 
 PostList.propTypes = {
   postList: PropTypes.object,
-  whenPostClicked: PropTypes.func
+  onPostSelection: PropTypes.func
 };
 
 export default PostList;

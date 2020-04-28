@@ -60,7 +60,7 @@ class PostControl extends React.Component {
     }
 
     render(){
-      let currentlyVisibleState = null;
+      let currentlyVisibleState = null; 
       let buttonText = null;
       if (this.state.editing) {
         currentlyVisibleState = <PostEdit post={this.state.selectedPost} onEditPost={this.handleEditingPost} />
@@ -91,7 +91,7 @@ PostControl.propTypes = {
 
 const mapStateToProps = state => {
   return {
-    masterPostList: state.masterPostList
+    masterPostList: state
   }
 };
 

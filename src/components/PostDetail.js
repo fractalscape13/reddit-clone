@@ -12,7 +12,7 @@ function PostDetail(props){
         <p>{post.username} - {post.timestamp}</p>
       </div>
       <div>
-        <img src={url} />
+        <img src={url} alt="randomImage" />
       </div>
       <div>
         <p>{post.content}</p>

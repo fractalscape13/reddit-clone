@@ -17,7 +17,7 @@ function Post(props){
         <Col md={9} onClick={() => props.whenPostClicked(props.id)}>
           <h3>{props.subject}</h3>
           <p>by {props.username}</p>
-          <img src={url} />
+          <img src={url} alt="randomImage"/>
         </Col>
       </Row>
     </React.Fragment>
