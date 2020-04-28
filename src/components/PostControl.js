@@ -130,8 +130,14 @@ PostControl.propTypes = {
 };
 
 const mapStateToProps = state => {
+  // console.log(state);
+  const testArray = Object.values(state.masterPostList).sort((a, b) => {
+    return a.brownies - b.brownies;
+  });
+  console.log(testArray);
   return {
-    masterPostList: state
+    masterPostList: testArray
+    // masterPostList: state.masterPostList
   }
 };
 

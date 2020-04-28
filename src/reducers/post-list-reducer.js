@@ -17,13 +17,6 @@ export default (state = {}, action) => {
       const newState = {...state};
       delete newState[id];
       return newState;
-    // case 'EDIT_POST':
-    //   const newStateUpdate = Object.assign({}, state, {[id]: Object.assign({}, state[id], {
-    //     subject: subject,
-    //     content: content,
-    //     image: image
-      // })
-    // });
     default: 
       return state;
   }

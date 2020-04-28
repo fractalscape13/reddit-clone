@@ -14,6 +14,7 @@ function EditPostForm(props) {
       image: post.image, 
       brownies: post.brownies,
       timestamp: post.timestamp,
+      key: post.key,
       id: post.id});
   }
 

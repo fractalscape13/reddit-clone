@@ -9,7 +9,8 @@ function Post(props){
 
   const divStyle= {
     width: "80%",
-    textAlign: "center"
+    textAlign: "center",
+    position: "relative"
   }
 
   const responsiveStyle = {
@@ -18,20 +19,28 @@ function Post(props){
     height: "auto"
   }
 
+  const voteStyle = {
+    // margin: "auto",
+    // // position: "absolute",
+    // // top: "50%",
+    // left: "30%",
+
+  }
+
   return (
     <React.Fragment>
-      <div style={divStyle}>
+      <div >
         <Card>
-          <Row>
-            <Col md={3}>
+          <Row style={divStyle}>
+            <Col style={voteStyle} md={2}>
               <button onClick = {()=> props.whenUpvoted(props)} type="submit">Upvote</button>
               <button onClick = {()=> props.whenDownvoted(props)} type="submit">Downvote</button>
                 <h4>{props.brownies}</h4>
             </Col>
-            <Col md={9} className="clickable" onClick={() => props.whenPostClicked(props.id)}>
-              <Card.Title><h3>{props.subject}</h3></Card.Title>
+            <Col md={10}>
+              <Card.Title className="clickable" onClick={() => props.whenPostClicked(props.id)}><h3>{props.subject}</h3></Card.Title>
               <p>by {props.username}</p>
-              <img src={url} alt="randomImage" style={responsiveStyle}/>
+              <img  className="clickable" onClick={() => props.whenPostClicked(props.id)} src={url} alt="randomImage" style={responsiveStyle}/>
             </Col>
           </Row>
         </Card>
