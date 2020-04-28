@@ -33,7 +33,7 @@ class PostControl extends React.Component {
 
     handleChangingSelectedPost = (id) => {
       const currentPost = this.props.masterPostList[id];
-      this.setState({selectedPost: currentPost});
+      this.setState({selectedPost: currentPost, editing: false});
     }
 
     handleAddingNewPost = (newPost) => {
@@ -54,9 +54,49 @@ class PostControl extends React.Component {
     handleEditingPost = (postToEdit) => {
       const { dispatch } = this.props;
       const { id, subject, content, username, image, brownies, timestamp } = postToEdit;
-      const action = {type: 'ADD_TICKET', id: id, subject: subject, content: content, username: username, image: image, brownies: brownies, timestamp: timestamp}
+      const action = {type: 'ADD_POST', id: id, subject: subject, content: content, username: username, image: image, brownies: brownies, timestamp: timestamp}
       dispatch(action);
       this.setState({editing: false, selectedPost: null});
+    }
+
+    handleUpvote = (post) => {
+      const { dispatch } = this.props;
+      const { id, subject, content, username, image, brownies, timestamp } = post;
+      const action = {
+        type: 'ADD_POST',
+        id: id,
+        subject: subject,
+        content: content,
+        username: username,
+        image: image,
+        brownies: brownies + 1,
+        timestamp: timestamp
+      }
+      dispatch(action);
+      this.setState({
+        editing: false,
+        selectedPost: null
+      });
+     }
+
+    handleDownvote = (post) => {
+      const { dispatch } = this.props;
+      const { id, subject, content, username, image, brownies, timestamp } = post;
+      const action = {
+        type: 'ADD_POST',
+        id: id,
+        subject: subject,
+        content: content,
+        username: username,
+        image: image,
+        brownies: brownies - 1,
+        timestamp: timestamp
+      }
+      dispatch(action);
+      this.setState({
+        editing: false,
+        selectedPost: null
+      });
     }
 
     render(){
@@ -72,7 +112,7 @@ class PostControl extends React.Component {
         currentlyVisibleState = <PostCreate onNewPostCreation={this.handleAddingNewPost} />
         buttonText = "Return to post list";
       } else {
-        currentlyVisibleState = <PostList postList={this.props.masterPostList} onPostSelection={this.handleChangingSelectedPost} />
+        currentlyVisibleState = <PostList postList={this.props.masterPostList} onPostSelection={this.handleChangingSelectedPost} onUpvote={this.handleUpvote} onDownvote={this.handleDownvote} />
         buttonText = "Add a post";
       }
 

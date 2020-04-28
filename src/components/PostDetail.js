@@ -5,6 +5,12 @@ function PostDetail(props){
   const { post, onClickingDelete } = props;
   let url = "http://source.unsplash.com/200x150/?" + post.image;
 
+  const responsiveStyle = {
+    width: "100%",
+    maxWidth: "200px",
+    height: "auto"
+  }
+  
   return (
     <React.Fragment>
       <div>
@@ -12,14 +18,14 @@ function PostDetail(props){
         <p>{post.username} - {post.timestamp}</p>
       </div>
       <div>
-        <img src={url} alt="randomImage" />
+        <img style={responsiveStyle} src={url} alt="randomImage" />
       </div>
       <div>
         <p>{post.content}</p>
       </div>
       <div>
         <button onClick={()=> onClickingDelete(post.id)}>Remove Post</button>
-          <button onClick={ props.onClickingEdit }>Edit Post</button>
+        <button onClick={ ()=> props.onClickingEdit(post.id) }>Edit Post</button>
       </div>
     </React.Fragment>
   )

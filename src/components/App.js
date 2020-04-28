@@ -8,11 +8,11 @@ import Container from 'react-bootstrap/Container'
 function App() {
   return (
     <React.Fragment>
-      <Container>
         <Header />
         <hr />
+        {/* <Container> */}
         <PostControl />
-      </Container>
+        {/* </Container> */}
     </React.Fragment>
   );
 }

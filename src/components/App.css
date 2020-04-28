@@ -4,8 +4,7 @@ body, html {
 
 body {
   text-align: center;
-  background-color: rgb(241, 241, 202);
-  background-image: linear-gradient(rgb(241, 241, 202), rgb(175, 163, 142));
+  background-color: rgb(175, 163, 142);
 }
 
 button {
@@ -22,4 +21,8 @@ button:hover {
 
 input, textarea {
   margin: 3px;
+}
+
+.clickable:hover {
+  cursor: pointer;
 }

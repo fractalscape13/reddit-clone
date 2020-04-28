@@ -1,6 +1,5 @@
 import React from 'react';
 import { v4 } from 'uuid';
-// import PropTypes from 'prop-types';
 import PostForm from './PostForm';
 import PropTypes from 'prop-types';
 
