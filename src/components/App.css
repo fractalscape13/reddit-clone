@@ -25,4 +25,5 @@ input, textarea {
 
 .clickable:hover {
   cursor: pointer;
+  opacity: .8;
 }

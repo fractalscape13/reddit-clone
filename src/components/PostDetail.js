@@ -10,12 +10,14 @@ function PostDetail(props){
     maxWidth: "200px",
     height: "auto"
   }
+
+  const date = Date(post.timestamp).toString();
   
   return (
     <React.Fragment>
       <div>
         <h1>{post.subject}</h1>
-        <p>{post.username} - {post.timestamp}</p>
+        <p>{post.username} - {date}</p>
       </div>
       <div>
         <img style={responsiveStyle} src={url} alt="randomImage" />
@@ -25,7 +27,7 @@ function PostDetail(props){
       </div>
       <div>
         <button onClick={()=> onClickingDelete(post.id)}>Remove Post</button>
-        <button onClick={ ()=> props.onClickingEdit(post.id) }>Edit Post</button>
+        <button onClick={()=> props.onClickingEdit(post.id) }>Edit Post</button>
       </div>
     </React.Fragment>
   )
