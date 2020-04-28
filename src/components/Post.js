@@ -1,6 +1,7 @@
 import React from 'react';
 import Row from 'react-bootstrap/Row';
-// import PropTypes from 'prop-types';
+import Col from 'react-bootstrap/Col';
+import PropTypes from 'prop-types';
 
 function Post(props){
 
@@ -27,6 +28,9 @@ function Post(props){
 Post.propTypes = {
 subject: PropTypes.string,
 username: PropTypes.string,
-b
+brownies: PropTypes.number,
+image: PropTypes.string,
+id: PropTypes.string,
+whenPostClicked: PropTypes.func
 }
 export default Post;

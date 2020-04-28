@@ -3,6 +3,7 @@ import Post from './Post';
 import PropTypes from "prop-types";
 
 function PostList(props) {
+  const post = props;
   return (
     <React.Fragment> 
       <h3>Post List</h3>
@@ -15,14 +16,17 @@ function PostList(props) {
           brownies={post.brownies}
           timestamp={post.timestamp}
           id={post.id}
-          key={post.id} />
+          key={post.id}
+          whenPostClicked={props.onPostSelection} />
+          
       })}
     </React.Fragment>
   );
 }
 
 PostList.propTypes = {
-  postList: PropTypes.object
+  postList: PropTypes.object,
+  whenPostClicked: PropTypes.func
 };
 
 export default PostList;

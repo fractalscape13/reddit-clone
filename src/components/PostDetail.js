@@ -13,7 +13,6 @@ function PostDetail(props){
       </div>
       <div>
         <img src={url} />
-        <p>img here (text from post.image)</p>
       </div>
       <div>
         <p>{post.content}</p>

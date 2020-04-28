@@ -31,6 +31,11 @@ class PostControl extends React.Component {
       this.setState({editing: true});
     }
 
+    handleChangingSelectedPost = (id) => {
+      const currentPost = this.props.masterPostList[id];
+      this.setState({selectedPost: currentPost});
+    }
+
     handleAddingNewPost = (newPost) => {
       const { dispatch } = this.props;
       const { id, subject, content, username, image, brownies, timestamp } = newPost;
@@ -39,9 +44,19 @@ class PostControl extends React.Component {
       this.setState({formVisibleOnPage: false});
     }
 
-    handleChangingSelectedPost = (id) => {
-      const selectedPost = this.props.masterPostList[id];
-      this.setState({selectedPost: selectedPost});
+    handleDeletingPost = (id) => {
+      const { dispatch } = this.props;
+      const action = {type: 'DELETE_POST', id: id}
+      dispatch(action);
+      this.setState({selectedPost: null});
+    }
+
+    handleEditingPost = (postToEdit) => {
+      const { dispatch } = this.props;
+      const { id, subject, content, username, image, brownies, timestamp } = postToEdit;
+      const action = {type: 'ADD_TICKET', id: id, subject: subject, content: content, username: username, image: image, brownies: brownies, timestamp: timestamp}
+      dispatch(action);
+      this.setState({editing: false, selectedPost: null});
     }
 
     render(){
@@ -54,7 +69,7 @@ class PostControl extends React.Component {
         currentlyVisibleState = <PostDetail post={this.state.selectedPost} onClickingDelete={this.handleDeletingPost} onClickingEdit={this.handleEditClick} />
         buttonText = "Return to post list";
       } else if (this.state.formVisibleOnPage) {
-        currentlyVisibleState = <PostForm onNewPostCreation={this.handleAddingNewPost} />
+        currentlyVisibleState = <PostCreate onNewPostCreation={this.handleAddingNewPost} />
         buttonText = "Return to post list";
       } else {
         currentlyVisibleState = <PostList postList={this.props.masterPostList} onPostSelection={this.handleChangingSelectedPost} />
@@ -76,7 +91,7 @@ PostControl.propTypes = {
 
 const mapStateToProps = state => {
   return {
-    masterPostList: state
+    masterPostList: state.masterPostList
   }
 };
 
